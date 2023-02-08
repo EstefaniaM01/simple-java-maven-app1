@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         gitcommit = "${gitcommit}"
-        REGISTRY = "estefaniam/proyecto"
+        REGISTRY = "estefaniam/testjenkinsdocker"
         REGISTRY_CREDENTIAL = "dockerhub"
         
     }
