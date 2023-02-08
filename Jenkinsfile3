@@ -47,7 +47,7 @@ pipeline {
           steps {
              sh"""
                docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-               docker build -t testjenkinsdocker:${gitcommit} .
+               docker build -t testjenkinsdocker:1.0 .
                docker push $DOCKER_USER/testjenkinsdocker:${gitcommit}
                 
                """
