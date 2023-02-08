@@ -45,7 +45,13 @@ pipeline {
         
         stage('Docker Build & Push') {
           steps {
-          sh "docker build -t ${REGISTRY}:${gitcommit} ."
+          sh "
+          //docker build -t ${REGISTRY}:${gitcommit} .
+          
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+          docker build -t testjenkinsdocker:${gitcommit} .
+          docker push $DOCKER_USER/testjenkinsdocker:${gitcommit}
+          "
            
               
           }  
